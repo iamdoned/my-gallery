@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #00FF00; /* 크로마키 색으로 전체 배경 변경 */
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 유동적인 열 배치 */
+    gap: 5px; /* 이미지 간 최소한의 간격 */
+    padding: 10px;
+    justify-content: center;
+}
+
+.thumbnail {
+    width: 100%;
+    height: auto;
+    max-height: 550px; /* 썸네일 크기를 1.5배로 키움 */
+    object-fit: contain; /* 비율을 유지하면서 크기 조정 */
+    cursor: pointer;
+    transition: transform 0.2s;
+    border: 1px solid transparent; /* 테두리를 투명하게 설정 */
+}
+
+.thumbnail:hover {
+    transform: scale(1.05); /* 마우스 오버 시 살짝 확대 */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    max-width: 1200px;
+}
+
+.modal-content img {
+    max-width: 90%;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: fixed; /* 위치를 고정 */
+    top: 50%; /* 화면 중앙에 위치 */
+    width: auto;
+    padding: 16px;
+    margin-top: -50px; /* 화살표를 화면 가운데로 위치 */
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    user-select: none;
+    transition: 0.6s ease;
+    z-index: 2; /* 화살표가 다른 요소 위에 표시되도록 */
+}
+
+.prev {
+    left: 0; /* 화면 왼쪽에 고정 */
+}
+
+.next {
+    right: 0; /* 화면 오른쪽에 고정 */
+}
